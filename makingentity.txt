@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class entity{
+    
+    private:
+    int _typeNu;
+    
+
+    public:
+
+    string _name;
+    
+    entity(int tn ){
+        SetType(tn);
+    };
+   
+    void SetType(int type){
+        _typeNu=type;
+    }
+
+    void GetType() {
+      cout<<_typeNu;
+    }
+
+    void SetName(string name){
+        _name=name;
+    }
+
+    void GetName() {
+      cout<<_name;
+    }
+
+
+    void hello(){
+        cout<<" I AM "<<_name<<endl;;
+    }
+
+};
+
+
+class GameManager : public entity {
+   public :
+    GameManager(){};   
+};
+
+
+int main () {
+    
+    GameManager ENT1(0,"GOD");
+    ENT1.hello();
+
+    GameManager ENT2(1,"UNITY");
+    ENT2.hello();
+}
